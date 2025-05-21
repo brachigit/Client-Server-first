@@ -9,7 +9,7 @@ const CreateNewUsers=async(req,res)=>{
             return res.status(400).json({message:'fields are required'})
         }
 
-    obj = await Users.findOne({username}).exec()
+   const obj = await Users.findOne({username}).exec()
 
     if (obj){
       return res.status(400).json({message:'you send username not unique'})
